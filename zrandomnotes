@@ -1,0 +1,8 @@
+Note that Botkit leaves all the native fields intact, so any fields that come in from the platform are still present in the object. However, our recommendation for accessing any platform-native fields is to use the message.incoming_message field which contains an unmodified version of the BotBuilder Activity, or reach even further into message.incoming_message.channelData which contains an unmodified copy of the raw source webhook payload.
+
+
+
+Using async functions to match triggers allows nearly limitless mechanisms to be put in play to evaluate a message. Functions can be used to test fields other than message.text, for example, or can test for fields added by middleware plugins such as possible intents added by an NLP middleware.
+
+
+
