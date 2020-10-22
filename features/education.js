@@ -3,8 +3,8 @@ const { BotkitConversation } = require("botkit");
 
 module.exports = function (controller) {
 
-  let DIALOG_ID = "my_dialog_1";
-  let myDialog = new BotkitConversation(DIALOG_ID, controller);
+  let DIALOG_ID2 = "my_dialog_3";
+  let myDialog = new BotkitConversation(DIALOG_ID2, controller);
 
   myDialog.say(
     "Institution: App Academy - Description: Coding bootcamp on full stack development - Timeline: May 2019-Oct2019"
@@ -16,7 +16,7 @@ module.exports = function (controller) {
   controller.addDialog(myDialog);
 
   controller.hears("education", "message", async (bot, message) => {
-    await bot.beginDialog(DIALOG_ID);
+    await bot.beginDialog(DIALOG_ID2);
     console.log(message);
   });
 };
